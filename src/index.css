@@ -10,3 +10,63 @@
 @import "./css/styles/style.css";
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
+
+/* Hot Collections keen slider carousel */
+.hot-collections-carousel {
+  position: relative;
+}
+
+.carousel-controls {
+  margin-bottom: 2rem;
+}
+
+.carousel-controls button {
+  background: linear-gradient(45deg, #8364e2, #9c4ee8);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(131, 100, 226, 0.3);
+}
+
+.carousel-controls button:active {
+  transform: translateY(0);
+}
+
+.keen-slider {
+  overflow: visible !important;
+}
+
+.keen-slider__slide {
+  min-height: 1px;
+  padding: 0 7.5px;
+}
+
+.keen-slider__slide .nft_coll {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.keen-slider__slide .nft_coll:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments for carousel controls */
+@media (max-width: 768px) {
+  .carousel-controls button {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+  }
+}
