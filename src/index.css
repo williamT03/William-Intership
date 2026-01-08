@@ -45,7 +45,7 @@
 }
 
 .keen-slider {
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .keen-slider__slide {
@@ -69,4 +69,59 @@
     height: 40px;
     margin: 0 5px;
   }
+}
+
+/* New Items Carousel Custom Styles */
+.new-items-carousel {
+  position: relative;
+}
+
+.new-items-carousel .keen-slider__slide {
+  min-height: 1px;
+  padding: 0 7.5px;
+}
+
+.new-items-carousel .keen-slider__slide .nft__item {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.new-items-carousel .keen-slider__slide .nft__item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced Timer Styles */
+.de_countdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  border: 2px solid #000;
+}
+
+/* Optimized Reusable Timer Component */
+.nft_timer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 15;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  line-height: 1.2;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
 }

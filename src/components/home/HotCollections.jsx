@@ -2,36 +2,16 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
+import Skeleton from "../UI/Skeleton";
 
 const HotCollections = () => {
   const [collections, setCollections] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
-    mode: "free",
     slides: {
       perView: 4,
       spacing: 15,
-    },
-    breakpoints: {
-      "(max-width: 1200px)": {
-        slides: {
-          perView: 3,
-          spacing: 10,
-        },
-      },
-      "(max-width: 768px)": {
-        slides: {
-          perView: 2,
-          spacing: 10,
-        },
-      },
-      "(max-width: 576px)": {
-        slides: {
-          perView: 1,
-          spacing: 10,
-        },
-      },
     },
   });
 
@@ -62,8 +42,31 @@ const HotCollections = () => {
                 <div className="small-border bg-color-2"></div>
               </div>
             </div>
-            <div className="col-lg-12 text-center">
-              <p>Loading hot collections...</p>
+            <div className="col-lg-12">
+              <div className="hot-collections-carousel">
+                <div className="carousel-controls mb-4 text-center">
+                  <Skeleton width="50px" height="50px" borderRadius="50%" />
+                  <Skeleton width="50px" height="50px" borderRadius="50%" />
+                </div>
+                <div className="row">
+                  {new Array(4).fill(0).map((_, index) => (
+                    <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12" key={index}>
+                      <div className="nft_coll">
+                        <div className="nft_wrap">
+                          <Skeleton width="100%" height="200px" borderRadius="8px" />
+                        </div>
+                        <div className="nft_coll_pp">
+                          <Skeleton width="50px" height="50px" borderRadius="50%" />
+                        </div>
+                        <div className="nft_coll_info">
+                          <Skeleton width="80%" height="20px" borderRadius="4px" />
+                          <Skeleton width="60%" height="15px" borderRadius="4px" />
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
