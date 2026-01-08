@@ -77,16 +77,16 @@ const NewItems = () => {
   }
 
   return (
-    <section id="section-items" className="no-bottom">
+    <section id="section-items" className="no-bottom" data-aos="fade-up">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>New Items</h2>
-              <div className="small-border bg-color-2"></div>
+              <h2 data-aos="fade-down" data-aos-delay="200">New Items</h2>
+              <div className="small-border bg-color-2" data-aos="fade-up" data-aos-delay="400"></div>
             </div>
           </div>
-          <div className="col-lg-12">
+          <div className="col-lg-12" data-aos="fade-up" data-aos-delay="600">
             <div className="new-items-carousel">
               <div className="carousel-controls mb-4 text-center">
                 <button 
@@ -103,9 +103,9 @@ const NewItems = () => {
                 </button>
               </div>
               <div ref={sliderRef} className="keen-slider">
-                {newItems.map((item) => (
+                {newItems.map((item, index) => (
                   <div className="keen-slider__slide" key={item.id}>
-                    <div className="nft__item">
+                    <div className="nft__item" data-aos="slide-up" data-aos-delay={200 + index * 150}>
                       <div className="author_list_pp">
                         <Link
                           to={`/author/${item.authorId}`}

@@ -13,14 +13,14 @@ const Nav = () => {
   };
 
   return (
-    <header className="transparent header-light scroll-light smaller">
+    <header className="transparent header-light scroll-light smaller" data-aos="fade-down" data-aos-duration="800">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
             <div className="de-flex sm-pt10">
               <div className="de-flex-col">
                 <div className="de-flex-col">
-                  <div id="logo">
+                  <div id="logo" data-aos="slide-right" data-aos-delay="300">
                     <Link to="/">
                       <img alt="" className="logo-2" src={Logo} />
                     </Link>
@@ -37,18 +37,18 @@ const Nav = () => {
                 </div>
               </div>
               <div className="de-flex-col header-col-mid">
-                <ul id="mainmenu">
-                  <li className="menu-item-has-children has-child">
+                <ul id="mainmenu" data-aos="slide-left" data-aos-delay="500">
+                  <li className="menu-item-has-children has-child" data-aos="fade-down" data-aos-delay="600">
                     <Link to="/">
                       Home<span></span>
                     </Link>
                   </li>
-                  <li className="menu-item-has-children has-child">
+                  <li className="menu-item-has-children has-child" data-aos="fade-down" data-aos-delay="700">
                     <Link to="/explore">
                       Explore<span></span>
                     </Link>
                   </li>
-                  <li>
+                  <li data-aos="fade-down" data-aos-delay="800">
                     <Link
                       to="#"
                       className="btn-main connect-wallet"

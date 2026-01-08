@@ -75,16 +75,16 @@ const HotCollections = () => {
   }
 
   return (
-    <section id="section-collections" className="no-bottom">
+    <section id="section-collections" className="no-bottom" data-aos="fade-up">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>Hot Collections</h2>
-              <div className="small-border bg-color-2"></div>
+              <h2 data-aos="fade-down" data-aos-delay="200">Hot Collections</h2>
+              <div className="small-border bg-color-2" data-aos="fade-up" data-aos-delay="400"></div>
             </div>
           </div>
-          <div className="col-lg-12">
+          <div className="col-lg-12" data-aos="fade-up" data-aos-delay="600">
             <div className="hot-collections-carousel">
               <div className="carousel-controls mb-4 text-center">
                 <button 
@@ -101,9 +101,9 @@ const HotCollections = () => {
                 </button>
               </div>
               <div ref={sliderRef} className="keen-slider">
-                {collections.map((collection) => (
+                {collections.map((collection, index) => (
                   <div className="keen-slider__slide" key={collection.id}>
-                    <div className="nft_coll">
+                    <div className="nft_coll" data-aos="zoom-in" data-aos-delay={200 + index * 100}>
                       <div className="nft_wrap">
                         <Link to={`/item-details/${collection.nftId}`}>
                           <img src={collection.nftImage} className="lazy img-fluid" alt={collection.title} />

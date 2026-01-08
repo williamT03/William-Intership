@@ -55,19 +55,19 @@ const TopSellers = () => {
   }
 
   return (
-    <section id="section-popular" className="pb-5">
+    <section id="section-popular" className="pb-5" data-aos="fade-up">
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
             <div className="text-center">
-              <h2>Top Sellers</h2>
-              <div className="small-border bg-color-2"></div>
+              <h2 data-aos="fade-down" data-aos-delay="200">Top Sellers</h2>
+              <div className="small-border bg-color-2" data-aos="fade-up" data-aos-delay="400"></div>
             </div>
           </div>
           <div className="col-md-12">
             <ol className="author_list">
-              {topSellers.map((seller) => (
-                <li key={seller.id}>
+              {topSellers.map((seller, index) => (
+                <li key={seller.id} data-aos="fade-right" data-aos-delay={100 + index * 80}>
                   <div className="author_list_pp">
                     <Link to={`/author/${seller.authorId}`}>
                       <img
