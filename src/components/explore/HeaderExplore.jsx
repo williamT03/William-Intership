@@ -2,7 +2,7 @@ import React from "react";
 
 const HeaderExplore = () => {
   return (
-    <div className="col-lg-12">
+    <div className="col-lg-12" data-aos="fade-down" data-aos-delay="200">
       <div className="items_filter">
         <form
           action="blank.php"
@@ -10,6 +10,8 @@ const HeaderExplore = () => {
           id="form_quick_search"
           method="post"
           name="form_quick_search"
+          data-aos="zoom-in"
+          data-aos-delay="400"
         >
           <div className="col text-center">
             <input
