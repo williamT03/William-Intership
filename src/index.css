@@ -10,3 +10,118 @@
 @import "./css/styles/style.css";
 @import "./css/colors/scheme-01.css";
 @import "./css/styles/coloring.css";
+
+/* Hot Collections keen slider carousel */
+.hot-collections-carousel {
+  position: relative;
+}
+
+.carousel-controls {
+  margin-bottom: 2rem;
+}
+
+.carousel-controls button {
+  background: linear-gradient(45deg, #8364e2, #9c4ee8);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-controls button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(131, 100, 226, 0.3);
+}
+
+.carousel-controls button:active {
+  transform: translateY(0);
+}
+
+.keen-slider {
+  overflow: hidden !important;
+}
+
+.keen-slider__slide {
+  min-height: 1px;
+  padding: 0 7.5px;
+}
+
+.keen-slider__slide .nft_coll {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.keen-slider__slide .nft_coll:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive adjustments for carousel controls */
+@media (max-width: 768px) {
+  .carousel-controls button {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+  }
+}
+
+/* New Items Carousel Custom Styles */
+.new-items-carousel {
+  position: relative;
+}
+
+.new-items-carousel .keen-slider__slide {
+  min-height: 1px;
+  padding: 0 7.5px;
+}
+
+.new-items-carousel .keen-slider__slide .nft__item {
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.new-items-carousel .keen-slider__slide .nft__item:hover {
+  transform: translateY(-5px);
+}
+
+/* Enhanced Timer Styles */
+.de_countdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  border: 2px solid #000;
+}
+
+/* Optimized Reusable Timer Component */
+.nft_timer {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 15;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+  line-height: 1.2;
+  min-width: 60px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
