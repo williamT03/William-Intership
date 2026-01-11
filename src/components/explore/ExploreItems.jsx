@@ -30,7 +30,7 @@ const ExploreItems = () => {
 
 
 
-  // Filter functionality
+
   useEffect(() => {
     let sortedItems = [...exploreItems];
     
@@ -54,13 +54,13 @@ const ExploreItems = () => {
 
   const handleFilterChange = (e) => {
     setFilter(e.target.value);
-    setVisibleCount(8); // Reset to show first 8 when filter changes
+    setVisibleCount(8); 
   };
 
   const handleLoadMore = () => {
     setVisibleCount(prev => {
-      if (prev === 8) return 12; // First click: show 12 total (8 + 4)
-      if (prev === 12) return 16; // Second click: show 16 total (12 + 4)
+      if (prev === 8) return 12; 
+      if (prev === 12) return 16; 
       return prev;
     });
   };
