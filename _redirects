@@ -1,1 +1,4 @@
-/*    /index.html   200
+# Handle client-side routing for React
+/author    /index.html   200
+/explore   /index.html   200
+/item-details/*  /index.html  200
