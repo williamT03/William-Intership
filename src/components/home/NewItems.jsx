@@ -14,6 +14,20 @@ const NewItems = () => {
       perView: 4,
       spacing: 15,
     },
+    breakpoints: {
+      "(max-width: 767px)": {
+        slides: {
+          perView: 1,
+          spacing: 10,
+        },
+      },
+      "(min-width: 768px) and (max-width: 1199px)": {
+        slides: {
+          perView: 2,
+          spacing: 15,
+        },
+      },
+    },
   });
 
   useEffect(() => {

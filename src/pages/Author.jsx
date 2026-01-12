@@ -10,6 +10,8 @@ const Author = () => {
   const [author, setAuthor] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [followersCount, setFollowersCount] = useState(0);
 
   useEffect(() => {
     const fetchAuthor = async () => {
@@ -30,6 +32,7 @@ const Author = () => {
         
         const data = await response.json();
         setAuthor(data);
+        setFollowersCount(data.followers);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching author:", error);
@@ -40,6 +43,16 @@ const Author = () => {
 
     fetchAuthor();
   }, [authorId]);
+
+  const handleFollowToggle = () => {
+    if (isFollowing) {
+      setFollowersCount(prev => prev - 1);
+      setIsFollowing(false);
+    } else {
+      setFollowersCount(prev => prev + 1);
+      setIsFollowing(true);
+    }
+  };
 
   if (loading) {
     return (
@@ -161,10 +174,17 @@ const Author = () => {
                   </div>
                   <div className="profile_follow de-flex" data-aos="slide-left" data-aos-delay="700">
                     <div className="de-flex-col">
-                      <div className="profile_follower">{author.followers} followers</div>
-                      <Link to="#" className="btn-main">
-                        Follow
-                      </Link>
+                      <div className="profile_follower">{followersCount} followers</div>
+                      <button 
+                        onClick={handleFollowToggle}
+                        className={`btn-main ${isFollowing ? 'btn-following' : ''}`}
+                        style={{
+                          background: isFollowing ? '#28a745' : '',
+                          borderColor: isFollowing ? '#28a745' : ''
+                        }}
+                      >
+                        {isFollowing ? 'Unfollow' : 'Follow'}
+                      </button>
                     </div>
                   </div>
                 </div>

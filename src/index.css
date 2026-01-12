@@ -125,3 +125,47 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
+
+/* Responsive Carousel Design */
+@media (max-width: 575px) {
+  .keen-slider__slide {
+    padding: 0 5px;
+  }
+  
+  .carousel-controls {
+    margin-bottom: 1.5rem;
+  }
+  
+  .carousel-controls button {
+    width: 35px;
+    height: 35px;
+    margin: 0 3px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+  .keen-slider__slide {
+    padding: 0 6px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .keen-slider__slide {
+    padding: 0 8px;
+  }
+}
+
+/* Follow Button Enhanced Styles */
+.btn-following {
+  transition: all 0.3s ease !important;
+}
+
+.btn-following:hover {
+  background: #dc3545 !important;
+  border-color: #dc3545 !important;
+  transform: translateY(-2px);
+}
+
+.btn-following:hover::after {
+  content: " ✗";
+}
